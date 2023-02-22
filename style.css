@@ -33,12 +33,14 @@ body {
 
 .card {
   margin: 0 1.5rem;
+  min-width: 250px;
   width: 100%;
   text-align: center;
   border-radius: 0.5rem;
   overflow: hidden;
   background-color: var(--clr-card-bg);
 }
+
 .card__image {
   height: 240px;
   opacity: 0.6;
@@ -48,9 +50,11 @@ body {
   background-blend-mode: hard-light;
   background-color: var(--clr-hightlight);
 }
+
 .card__body {
   padding: 2.5rem 2rem 0 2rem;
 }
+
 .card__title {
   font-size: 1.7rem;
   font-family: 'Inter', sans-serif;
@@ -58,18 +62,21 @@ body {
   color: var(--clr-heading);
   margin-bottom: 1rem;
 }
+
 .highlight {
   color: var(--clr-hightlight);
 }
+
 .card__description {
+  font-family: 'Inter', sans-serif;
   line-height: 1.5rem;
   margin-bottom: 2.5rem;
 }
-.card__stats {
-}
+
 .card__stats-item {
   margin-bottom: 1.8rem;
 }
+
 .card__stats-item-value {
   font-size: 1.5rem;
   font-family: 'Inter', sans-serif;
@@ -77,9 +84,74 @@ body {
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
+
 .card__stats-item-label {
-  font-family: 'Inter', sans-serif;
+  color: var(--clr-stat);
   letter-spacing: 0.1rem;
   font-size: 0.75rem;
   text-transform: uppercase;
+}
+
+@media (min-width: 600px) {
+  .card {
+    display: grid;
+    grid-row: 1fr 1fr;
+    max-width: 600px;
+  }
+
+  .card__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .card__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .card {
+    display: grid;
+    grid-template-areas: 'description image';
+    grid-auto-columns: 1fr;
+    max-width: 1110px;
+  }
+
+  .card__image {
+    grid-area: image;
+    height: 100%;
+    background-image: url('./images/image-header-desktop.jpg');
+  }
+
+  .card__body {
+    grid-area: description;
+    text-align: left;
+    padding: 4rem 6rem 2rem 4rem;
+  }
+
+  .card__title {
+    font-size: 2.3rem;
+    margin-bottom: 2rem;
+  }
+
+  .card__description {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    margin-bottom: 4rem;
+  }
+
+  .card__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card__stats-item:nth-child(2),
+  .card__stats-item:nth-child(3) {
+    justify-self: center;
+  }
+
+  .card__stats-item-value {
+    font-size: 1.6rem;
+  }
 }
