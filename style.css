@@ -7,9 +7,79 @@
 }
 
 :root {
+  --clr-main-bg: #090b1a;
+  --clr-card-bg: #1b1938;
+  --clr-hightlight: #aa5cdb;
+
+  --clr-heading: #ffffff;
+  --clr-text: rgba(255, 255, 255, 0.75);
+  --clr-stat: rgba(255, 255, 255, 0.6);
 }
 
 body {
-  font-family: 'Inter', sans-serif;
   font-family: 'Lexend Deca', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--clr-text);
+  background-color: var(--clr-main-bg);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.card {
+  margin: 0 1.5rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: var(--clr-card-bg);
+}
+.card__image {
+  height: 240px;
+  opacity: 0.6;
+  background-image: url('./images/image-header-mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: hard-light;
+  background-color: var(--clr-hightlight);
+}
+.card__body {
+  padding: 2.5rem 2rem 0 2rem;
+}
+.card__title {
+  font-size: 1.7rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: var(--clr-heading);
+  margin-bottom: 1rem;
+}
+.highlight {
+  color: var(--clr-hightlight);
+}
+.card__description {
+  line-height: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.card__stats {
+}
+.card__stats-item {
+  margin-bottom: 1.8rem;
+}
+.card__stats-item-value {
+  font-size: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--clr-heading);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.card__stats-item-label {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
 }
